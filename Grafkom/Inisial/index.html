@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+        canvas {
+            display: block;
+            width: 100vw;
+            height: 100vh;
+            border: 3px solid red;
+
+        }
+    </style>
+<body>
+    <canvas id = "mycanvas"></canvas>
+    
+    <script id="vertCode" type="x-shader/x-vertex">
+        attribute vec2 coordinates;
+        void main(void) {
+            gl_Position = vec4(coordinates,0.0, 1.0);
+        }
+    </script>
+
+    <script id="fragCode" type="x-shader/x-fragment">
+        void main() {
+            gl_FragColor = vec4(0.0, 0.0, 1.0, 0.1);
+        }
+    </script>
+
+    <script src="main.js" type="text/javascript"></script>
+</body>
+</html>
